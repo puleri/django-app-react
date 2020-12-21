@@ -10,6 +10,8 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 
+import ProjectIndex from './components/ProjectIndex/ProjectIndex'
+
 class App extends Component {
   constructor () {
     super()
@@ -58,6 +60,11 @@ class App extends Component {
           )} />
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+          <AuthenticatedRoute user={user} path='/projects' render={() => (
+            <div>
+              <ProjectIndex msgAlert={this.msgAlert} user={user} />
+            </div>
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
