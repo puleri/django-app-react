@@ -5,5 +5,9 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  createProjectSuccess: 'All good to go. Let\'s get started!',
+  createProjectFailure: 'Something went wrong. Try again.',
+  deleteProjectSuccess: 'Succesfully deleted project.',
+  deleteProjectFailure: 'Failed to delete project.'
 }
