@@ -8,16 +8,17 @@ import { projectIndex, createProject, projectDelete } from '../../api/project'
 class Projects extends Component {
   constructor (props) {
     super(props)
-
+    const today = new Date()
+    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
     this.state = {
       projects: [],
       project: {
-        name: '',
+        name: ' ',
         completed: false,
         priority: 'Must',
-        deadline: 'yyyy-MM-dd',
+        deadline: date,
         time_estimate: 1,
-        description: ''
+        description: ' '
       }
     }
   }
@@ -93,9 +94,10 @@ class Projects extends Component {
     const projectId = event.target.name
 
     projectDelete(this.props.user, projectId)
+      // .then(console.log(projectId))
       .then(() => {
-        this.setState({ project: {
-          name: '' } })
+        // this.setState({ project: {
+        //   name: '' } })
         this.props.msgAlert({
           heading: 'Bye bye project.',
           message: messages.deleteProjectSuccess,
@@ -105,9 +107,15 @@ class Projects extends Component {
       .then(props => {
         projectIndex(this.props.user)
           .then(res => {
-            this.setState({ projects: res.data.projects })
+            this.setState({ projects: res.data })
           })
       })
+      // .then(props => {
+      //   projectIndex(this.props.user)
+      //     .then(res => {
+      //       this.setState({ projects: res.data.projects })
+      //     })
+      // })
       .catch(error => {
         this.props.msgAlert({
           heading: 'Can not delete message at this time. ' + error.message,
@@ -123,7 +131,7 @@ class Projects extends Component {
         <h1>{project.name}</h1>
         <h3>{project.deadline}</h3>
         <p>{project.description}</p>
-        <button name={project._id} onClick={this.onProjectDelete}>Delete</button>
+        <button name={project.id} onClick={this.onProjectDelete}>Delete</button>
       </div>
     ))
     return (
