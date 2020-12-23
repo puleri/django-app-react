@@ -66,7 +66,7 @@ class App extends Component {
               <ProjectIndex msgAlert={this.msgAlert} user={user} />
             </div>
           )} />
-          <AuthenticatedRoute user={user} path='/project-update/:projectId' render={({ match, history }) => (
+          <AuthenticatedRoute user={user} path='/update/:projectId' render={({ match, history }) => (
             <UpdateProject
               match={match}
               history={history}

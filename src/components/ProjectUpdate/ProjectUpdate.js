@@ -50,19 +50,19 @@ const UpdateProject = props => {
       <h1>Update Project</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Project Title:</label>
-        <input type="text" name="name" id="name" value={this.state.project.name} onChange={handleChange} /><br />
+        <input type="text" name="name" id="name" value={project.name} onChange={handleChange} /><br />
         <label htmlFor="completed">Completed:</label>
-        <input type="checkbox" id="completed" name="comlpeted" value={this.state.project.completed} onChange={handleChange} /><br />
+        <input type="checkbox" id="completed" name="comlpeted" value={project.completed} onChange={handleChange} /><br />
         <label htmlFor="priority">Priority:</label>
-        <select id="priority" name="priority" value={this.state.project.priority} onChange={handleChange}>
+        <select id="priority" name="priority" value={project.priority} onChange={handleChange}>
           <option value="Must">Must</option>
           <option value="Should">Should</option>
           <option value="Could">Could</option>
           <option value="Would">Would</option>
         </select><br />
         <label htmlFor="deadline">Deadline:</label>
-        <input type="date" id="deadline" name="deadline" value={this.state.project.deadline} onChange={handleChange}/><br />
-        <select id="time_estimate" name="time_estimate" value={this.state.project.time_estimate} onChange={handleChange}>
+        <input type="date" id="deadline" name="deadline" value={project.deadline} onChange={handleChange}/><br />
+        <select id="time_estimate" name="time_estimate" value={project.time_estimate} onChange={handleChange}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -70,7 +70,7 @@ const UpdateProject = props => {
           <option value="5">5</option>
         </select>
         <label htmlFor="description">Description</label>
-        <textarea name="description" rows="15" cols="35" value={this.state.project.description} onChange={handleChange}></textarea><br />
+        <textarea name="description" rows="15" cols="35" value={project.description} onChange={handleChange}></textarea><br />
         <button type="submit">Submit</button>
       </form>
       <Link to="/projects/" className="backButton">Back</Link>
