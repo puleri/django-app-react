@@ -33,3 +33,14 @@ export const projectDelete = (user, projectId) => {
     }
   })
 }
+
+export const projectUpdate = (user, project, id) => {
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + '/projects/' + id + '/',
+    headers: {
+      Authorization: `Token ${user.token}`
+    },
+    data: { project }
+  })
+}

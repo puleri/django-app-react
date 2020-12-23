@@ -44,6 +44,9 @@ class Projects extends Component {
   }
   onCreateProject = (event) => {
     event.preventDefault()
+
+    const today = new Date()
+    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
     const { msgAlert } = this.props
     const { user } = this.props
     createProject(this.state.project, user)
@@ -61,7 +64,13 @@ class Projects extends Component {
           })
       })
       .then(() => this.setState({ project: {
-        name: '' } }))
+        name: '',
+        completed: false,
+        priority: 'Must',
+        deadline: date,
+        time_estimate: 1,
+        description: ' '
+      } }))
       .then(() => msgAlert({
         heading: 'Created!',
         message: messages.createProjectSuccess,
