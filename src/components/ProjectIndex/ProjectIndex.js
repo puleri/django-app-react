@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import messages from '../AutoDismissAlert/messages'
 
@@ -141,6 +141,7 @@ class Projects extends Component {
         <h3>{project.deadline}</h3>
         <p>{project.description}</p>
         <button name={project.id} onClick={this.onProjectDelete}>Delete</button>
+        <Link to={'/update/' + project.id}>update</Link>
       </div>
     ))
     return (

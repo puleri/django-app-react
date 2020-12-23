@@ -11,7 +11,7 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 
 import ProjectIndex from './components/ProjectIndex/ProjectIndex'
-
+import UpdateProject from './components/ProjectUpdate/ProjectUpdate'
 class App extends Component {
   constructor () {
     super()
@@ -66,6 +66,14 @@ class App extends Component {
               <ProjectIndex msgAlert={this.msgAlert} user={user} />
             </div>
           )} />
+          <AuthenticatedRoute user={user} path='/project-update/:projectId' render={({ match, history }) => (
+            <UpdateProject
+              match={match}
+              history={history}
+              user={user}
+              msgAlert={this.msgAlert}
+            />
+          )}/>
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
