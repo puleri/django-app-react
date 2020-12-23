@@ -1,6 +1,6 @@
 {
   "name": "django-app-react",
-  "homepage": "https://github.com/puleri/django-app-react/",
+  "homepage": "https://puleri.github.io/django-app-react/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
