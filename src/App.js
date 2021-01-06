@@ -9,6 +9,7 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+import Home from './components/Home/Home'
 
 import ProjectIndex from './components/ProjectIndex/ProjectIndex'
 import UpdateProject from './components/ProjectUpdate/ProjectUpdate'
@@ -55,6 +56,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Home msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />

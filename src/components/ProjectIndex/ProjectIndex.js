@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
-
 import messages from '../AutoDismissAlert/messages'
 
 import { projectIndex, createProject, projectDelete } from '../../api/project'
@@ -160,14 +159,15 @@ class Projects extends Component {
           </select><br />
           <label htmlFor="deadline">Deadline:</label>
           <input type="date" id="deadline" name="deadline" value={this.state.project.deadline} onChange={this.handleInputChange}/><br />
-          <select id="time_estimate" name="time_estimate" value={this.state.project.time_estimate} onChange={this.handleInputChange}>
+          <label htmlFor="time_estimate">Time Estimate:</label>
+          <select id="time_estimate" name="time_estimate" value={this.state.project.time_estimate} onChange={this.handleInputChange}><br/>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-          </select>
-          <label htmlFor="description">Description</label>
+          </select><br/>
+          <label htmlFor="description">Description:</label><br/>
           <textarea name="description" rows="15" cols="35" value={this.state.project.description} onChange={this.handleInputChange}></textarea><br />
           <button type="submit">Submit</button>
           <output type="text">

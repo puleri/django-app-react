@@ -24,8 +24,8 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
+  <Navbar bg="danger" variant="dark" expand="md">
+    <Navbar.Brand id="brand" href="#">
       zone
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
