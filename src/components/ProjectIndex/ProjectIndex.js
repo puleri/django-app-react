@@ -5,6 +5,8 @@ import messages from '../AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 // import DatePicker from 'react-bootstrap-date-picker'
+import CardColumns from 'react-bootstrap/CardColumns'
+import Card from 'react-bootstrap/Card'
 
 import { projectIndex, createProject, projectDelete } from '../../api/project'
 
@@ -140,11 +142,15 @@ class Projects extends Component {
     // console.log('this is ', this)
     const projects = this.state.projects.map(project => (
       <div key={`${project._id}`}>
-        <h1>{project.name}</h1>
-        <h3>{project.deadline}</h3>
-        <p>{project.description}</p>
-        <button name={project.id} onClick={this.onProjectDelete}>Delete</button>
-        <Link to={'/update/' + project.id}>update</Link>
+        <Card className="project-cards">
+          <h1>{project.name}</h1>
+          <h3>{project.deadline}</h3>
+          <p>{project.description}</p>
+          <div className="row">
+            <button className="col-6" id="delete-project" name={project.id} onClick={this.onProjectDelete}>Delete</button>
+            <Link className="col-6" to={'/update/' + project.id}>update</Link>
+          </div>
+        </Card>
       </div>
     ))
     return (
@@ -175,9 +181,9 @@ class Projects extends Component {
           <Form.Label htmlFor="description">Description:</Form.Label><br/>
           <Form.Control as="textarea" name="description" rows="15" cols="35" value={this.state.project.description} onChange={this.handleInputChange}></Form.Control><br />
           <Button type="submit">Submit</Button>
-          <output type="text">
+          <CardColumns type="text">
             {projects}
-          </output>
+          </CardColumns>
         </Form>
       </div>
     )

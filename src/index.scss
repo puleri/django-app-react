@@ -7,3 +7,33 @@ body {
 #brand {
   font-family: 'Gruppo', cursive;
 }
+
+#delete-project {
+  background: none;
+  border: none;
+  color: red;
+}
+
+#delete-project :hover {
+  text-decoration: underline;
+}
+
+.project-cards {
+  padding: 15px;
+  margin-top: 20px;
+  margin: 15px;
+  margin-bottom: 40px;
+}
+
+.row.make-columns {
+    -moz-column-width: 19em;
+    -webkit-column-width: 19em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap:1em;
+}
+
+.row.make-columns > div {
+    display: inline-block;
+    padding:  .5rem;
+    width:  100%;
+}
