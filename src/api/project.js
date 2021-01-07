@@ -11,6 +11,16 @@ export const projectIndex = user => {
   })
 }
 
+export const showProject = (user, projectId) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/projects/' + projectId + '/',
+    headers: {
+      Authorization: `Token ${user.token}`
+    }
+  })
+}
+
 export const createProject = (project, user) => {
   console.log('project is ', project)
   return axios({
