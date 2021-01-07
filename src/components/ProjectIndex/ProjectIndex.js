@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+// import Calendar from 'react-calendar'
 import { withRouter, Link } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+// import DatePicker from 'react-bootstrap-date-picker'
 
 import { projectIndex, createProject, projectDelete } from '../../api/project'
 
@@ -145,35 +149,36 @@ class Projects extends Component {
     ))
     return (
       <div>
-        <form onSubmit={this.onCreateProject} className="createProject">
-          <label htmlFor="title">Project Title:</label>
-          <input type="text" name="name" id="name" value={this.state.project.name} onChange={this.handleInputChange} /><br />
-          <label htmlFor="completed">Completed:</label>
-          <input type="checkbox" id="completed" name="comlpeted" value={this.state.project.completed} onChange={this.handleInputChange} /><br />
-          <label htmlFor="priority">Priority:</label>
-          <select id="priority" name="priority" value={this.state.project.priority} onChange={this.handleInputChange}>
+        <Form onSubmit={this.onCreateProject} className="createProject">
+
+          <Form.Label htmlFor="title">Project Title:</Form.Label>
+          <Form.Control type="text" name="name" id="name" value={this.state.project.name} onChange={this.handleInputChange} /><br />
+          <Form.Label htmlFor="completed">Completed:</Form.Label>
+          <Form.Control type="checkbox" id="completed" name="comlpeted" value={this.state.project.completed} onChange={this.handleInputChange} /><br />
+          <Form.Label htmlFor="priority">Priority:</Form.Label>
+          <Form.Control as="select" size="sm" id="priority" name="priority" value={this.state.project.priority} onChange={this.handleInputChange} custom>
             <option value="Must">Must</option>
             <option value="Should">Should</option>
             <option value="Could">Could</option>
             <option value="Would">Would</option>
-          </select><br />
-          <label htmlFor="deadline">Deadline:</label>
-          <input type="date" id="deadline" name="deadline" value={this.state.project.deadline} onChange={this.handleInputChange}/><br />
-          <label htmlFor="time_estimate">Time Estimate:</label>
-          <select id="time_estimate" name="time_estimate" value={this.state.project.time_estimate} onChange={this.handleInputChange}><br/>
+          </Form.Control><br />
+          <Form.Label htmlFor="deadline">Deadline:</Form.Label>
+          <Form.Control type="date" id="deadline" name="deadline" value={this.state.project.deadline} onChange={this.handleInputChange}/><br />
+          <Form.Label htmlFor="time_estimate">Time Estimate:</Form.Label>
+          <Form.Control as="select" id="time_estimate" name="time_estimate" value={this.state.project.time_estimate} onChange={this.handleInputChange}><br/>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-          </select><br/>
-          <label htmlFor="description">Description:</label><br/>
-          <textarea name="description" rows="15" cols="35" value={this.state.project.description} onChange={this.handleInputChange}></textarea><br />
-          <button type="submit">Submit</button>
+          </Form.Control><br/>
+          <Form.Label htmlFor="description">Description:</Form.Label><br/>
+          <Form.Control as="textarea" name="description" rows="15" cols="35" value={this.state.project.description} onChange={this.handleInputChange}></Form.Control><br />
+          <Button type="submit">Submit</Button>
           <output type="text">
             {projects}
           </output>
-        </form>
+        </Form>
       </div>
     )
   }
