@@ -44,12 +44,22 @@ const UpdateProject = props => {
   //   }
   // }
   const handleChange = (event) => {
-    const updatedField = { [event.target.name]: event.target.value }
-    setProject(oldProject => {
-      const updatedProject = { ...oldProject, ...updatedField }
-      return updatedProject
-    })
+    if (event.target.name === 'completed') {
+      setProject(oldProject => {
+        return { ...oldProject, completed: !oldProject.completed }
+      })
+    } else {
+      const updatedField = { [event.target.name]: event.target.value }
+      setProject(oldProject => {
+        const updatedProject = { ...oldProject, ...updatedField }
+        return updatedProject
+      })
+    }
   }
+  // const onCheck=((event)=>(
+  //   let checked=event.target.checked;
+  //   setProject()
+  // ))
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -87,7 +97,7 @@ const UpdateProject = props => {
             </div>
             <div className="col-2">
               <Form.Label htmlFor="completed">Completed: </Form.Label>
-              <Form.Control type="checkbox" id="completed" name="completed" value={project.completed} onChange={handleChange} /><br />
+              <Form.Control type="checkbox" id="completed" name="completed" checked={project.completed ? 'checked' : ''} onChange={handleChange} /><br />
             </div>
             <div className="col-4 ">
               <Form.Label htmlFor="priority">Priority: </Form.Label>
