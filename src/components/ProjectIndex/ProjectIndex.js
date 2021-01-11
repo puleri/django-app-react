@@ -171,10 +171,6 @@ class Projects extends Component {
               <Form.Label htmlFor="title">Project Title:</Form.Label>
               <Form.Control type="text" name="name" id="name" value={this.state.project.name} onChange={this.handleInputChange} />
             </div>
-            <div className="col-2">
-              <Form.Label htmlFor="completed">Completed:</Form.Label>
-              <Form.Control type="checkbox" id="completed" name="completed" value={this.state.project.completed} onChange={this.handleCompleted} />
-            </div>
             <div className="col-4">
               <Form.Label htmlFor="deadline">Deadline:</Form.Label>
               <Form.Control type="date" id="deadline" name="deadline" value={this.state.project.deadline} onChange={this.handleInputChange}/>
