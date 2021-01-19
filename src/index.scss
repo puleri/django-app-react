@@ -1,7 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: #D2F0CA;
+  background: url('img/clouds.png');
+  background-size: cover;
+}
+@media only screen and (min-width: 680px) {
+  body {
+    background-image: url('img/clouds-square.png');
+    background-size: cover;
+  }
 }
 
 #brand {
@@ -36,4 +43,72 @@ body {
     display: inline-block;
     padding:  .5rem;
     width:  100%;
+}
+
+.landing-body {
+  margin-top: 20px;
+}
+
+.home-carousel {
+  margin-top: 125px;
+  height: 200px;
+}
+
+.carousel-header {
+  text-align: center;
+  font-family: 'Gruppo', cursive;
+}
+
+.projectDetail {
+  font-size: 10px;
+}
+
+.project-card-description {
+  font-size: 12px;
+}
+
+.password-signup {
+  font-size: 10px;
+  margin: 1px;
+}
+
+// .backButtonContainer {
+//   margin-left: 90%;
+//   width: 70px;
+//   margin-bottom: 10px;
+//   border: 2px solid rgb(217, 205, 158);
+//   border-radius: 5px;
+// }
+// .backButtonContainer :hover {
+//   color: rgb(217, 205, 158);
+//   text-decoration: none;
+//   background-color: rgb(247, 239, 208);
+//
+// }
+
+// .backButtonContainer {
+//   padding: -20px;
+//   color: rgb(217, 205, 158);
+//   background-color: none;
+//   margin-left: 90%;
+//   margin-bottom: 10px;
+//   border: 2px solid rgb(217, 205, 158);
+// }
+
+.backButton {
+  padding: 10px;
+  color: rgb(217, 205, 158);
+  background-color: none;
+  margin-bottom: 10px;
+}
+
+.backButton :hover {
+  color: rgb(217, 205, 158);
+  text-decoration: none;
+  background-color: rgb(247, 239, 208);
+}
+
+.updateForm {
+  margin-bottom: 30px;
+  margin-top: 20px;
 }

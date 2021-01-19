@@ -145,16 +145,30 @@ class Projects extends Component {
       })
   }
   render () {
-    // console.log('this is ', this)
+    console.log('this is ', this)
+    const greenStyles = {
+      'background-color': 'rgb(158, 193, 217, .7)',
+      'padding': '15px',
+      'margin-top': '20px',
+      'margin': '15px',
+      'margin-bottom': '40px'
+    }
+    const blueStyles = {
+      'background-color': 'rgb(217, 205, 158, .7)',
+      'padding': '15px',
+      'margin-top': '20px',
+      'margin': '15px',
+      'margin-bottom': '40px'
+    }
     const projects = this.state.projects.map(project => (
       <div key={`${project.id}`}>
-        <Card className="project-cards">
-          <h1>{project.name}</h1>
-          <h3>{project.deadline}</h3>
-          <p>{project.description}</p>
+        <Card style={project.completed ? greenStyles : blueStyles} className="project-cards">
+          <h5>{project.name}</h5>
+          <h6>{project.deadline}</h6>
+          <p className="project-card-description">{project.description}</p>
           <div className="row">
-            <button className="col-6" id="delete-project" name={project.id} onClick={this.onProjectDelete}>Delete</button>
-            <Link className="col-6" to={'/update/' + project.id + '/'}>update</Link>
+            <button className="projectDetail col-6" id="delete-project" name={project.id} onClick={this.onProjectDelete}>Delete</button>
+            <Link className="projectDetail col-6" to={'/update/' + project.id + '/'}>Update</Link>
           </div>
         </Card>
       </div>

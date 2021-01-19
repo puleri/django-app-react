@@ -3,6 +3,8 @@ import { Redirect, Link } from 'react-router-dom'
 import { projectUpdate, showProject } from '../../api/project'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { css } from 'glamor'
+// import Container from 'react-bootstrap/Container'
 
 const UpdateProject = props => {
   const today = new Date()
@@ -82,11 +84,38 @@ const UpdateProject = props => {
       <Redirect to='/projects/'/>
     )
   }
+  const style = {
+    MenuLink: {
+      marginLeft: '90%',
+      marginBottom: '20px',
+      textDecoration: 'none',
+      color: 'rgb(117, 97, 75)',
+      borderRadius: '5px',
+      transition: 'all 0.3s',
+      ':hover': {
+        textDecoration: 'none',
+        color: 'rgb(117, 97, 75)',
+        backgroundColor: 'rgb(252, 241, 197, 1)'
+      }
+    },
+    Submit: {
+      backgroundColor: 'rgb(247, 239, 208, .8)',
+      color: 'rgb(117, 97, 75)',
+      borderRadius: '5px',
+      border: 'none',
+      ':hover': {
+        textDecoration: 'none',
+        color: 'rgb(117, 97, 75)',
+        backgroundColor: 'rgb(252, 241, 197, 1)',
+        border: 'none'
+      }
+    }
+  }
   console.log('project is ', project)
   return (
     <div>
       {project ? (
-        <Form onSubmit={handleSubmit}>
+        <Form className="updateForm" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-12">
               <h3>Update project</h3>
@@ -127,8 +156,8 @@ const UpdateProject = props => {
               <Form.Control as="textarea" name="description" rows="15" cols="35" value={project.description} onChange={handleChange}></Form.Control><br />
             </div>
           </div>
-          <Button type="submit">Submit</Button>
-          <Link to="/projects/" className="backButton">Back</Link>
+          <Button {...css(style.Submit)} type="submit">Submit</Button>
+          <Link className="backButton" {...css(style.MenuLink)} to="/projects/">Back</Link>
         </Form>
       ) : 'Loading...'}
     </div>
