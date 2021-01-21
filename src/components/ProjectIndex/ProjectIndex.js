@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 // import DatePicker from 'react-bootstrap-date-picker'
 import CardColumns from 'react-bootstrap/CardColumns'
 import Card from 'react-bootstrap/Card'
+import { css } from 'glamor'
 
 import { projectIndex, createProject, projectDelete } from '../../api/project'
 
@@ -160,6 +161,20 @@ class Projects extends Component {
       'margin': '15px',
       'margin-bottom': '40px'
     }
+    const style = {
+      Submit: {
+        backgroundColor: 'rgb(247, 239, 208, .8)',
+        color: 'rgb(117, 97, 75)',
+        borderRadius: '5px',
+        border: 'none',
+        ':hover': {
+          textDecoration: 'none',
+          color: 'rgb(117, 97, 75)',
+          backgroundColor: 'rgb(252, 241, 197, 1)',
+          border: 'none'
+        }
+      }
+    }
     const projects = this.state.projects.map(project => (
       <div key={`${project.id}`}>
         <Card style={project.completed ? greenStyles : blueStyles} className="project-cards">
@@ -210,10 +225,10 @@ class Projects extends Component {
             </div>
             <div className="col-12">
               <Form.Label htmlFor="description">Description:</Form.Label><br/>
-              <Form.Control as="textarea" name="description" rows="15" cols="35" value={this.state.project.description} onChange={this.handleInputChange}></Form.Control><br />
+              <Form.Control as="textarea" name="description" rows="3" cols="35" value={this.state.project.description} onChange={this.handleInputChange}></Form.Control><br />
             </div>
           </div>
-          <Button type="submit">Submit</Button>
+          <Button {...css(style.Submit)} type="submit">Submit</Button>
           <CardColumns type="text">
             {projects}
           </CardColumns>

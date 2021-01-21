@@ -6,6 +6,22 @@ import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { css } from 'glamor'
+
+const style = {
+  Submit: {
+    color: 'rgb(247, 239, 208)',
+    backgroundColor: 'rgb(117, 97, 75, .8)',
+    borderRadius: '5px',
+    border: 'none',
+    ':hover': {
+      textDecoration: 'none',
+      color: 'rgb(117, 97, 75)',
+      backgroundColor: 'rgb(252, 241, 197, 1)',
+      border: 'none'
+    }
+  }
+}
 
 class SignUp extends Component {
   constructor () {
@@ -53,7 +69,7 @@ class SignUp extends Component {
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign Up</h3>
-          <Form onSubmit={this.onSignUp}>
+          <Form className="updateForm" onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -89,6 +105,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Button
+              {...css(style.Submit)}
               variant="danger"
               type="submit"
             >

@@ -1,6 +1,16 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import { css } from 'glamor'
+
+const style = {
+  Header: {
+    backgroundColor: 'rgb(117, 97, 75, .8)',
+    ':hover': {
+      textDecoration: 'none'
+    }
+  }
+}
 
 const authenticatedOptions = (
   <Fragment>
@@ -24,7 +34,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="danger" variant="dark" expand="md">
+  <Navbar {...css(style.Header)} variant="dark" expand="md">
     <Navbar.Brand id="brand" href="#">
       zone
     </Navbar.Brand>
