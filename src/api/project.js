@@ -36,7 +36,7 @@ export const createTask = (task, user, projectId) => {
 export const showProject = (user, projectId) => {
   return axios({
     method: 'GET',
-    url: apiUrl + '/projects/' + projectId + '/',
+    url: apiUrl + '/projects/' + projectId + '/tasks/',
     headers: {
       Authorization: `Token ${user.token}`
     }
@@ -59,7 +59,7 @@ export const projectDelete = (user, projectId) => {
   console.log('projectId is ', projectId)
   return axios({
     method: 'DELETE',
-    url: apiUrl + '/projects/' + projectId,
+    url: apiUrl + '/projects/' + projectId + '/tasks/',
     headers: {
       Authorization: `Token ${user.token}`
     }
@@ -69,7 +69,7 @@ export const projectDelete = (user, projectId) => {
 export const projectUpdate = (user, project, id) => {
   return axios({
     method: 'PATCH',
-    url: apiUrl + '/projects/' + id + '/',
+    url: apiUrl + '/projects/' + id + '/tasks/',
     headers: {
       Authorization: `Token ${user.token}`
     },

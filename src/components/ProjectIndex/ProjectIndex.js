@@ -184,7 +184,7 @@ class Projects extends Component {
           <p className="project-card-description">{project.description}</p>
           <div className="row">
             <button className="projectDetail col-6" id="delete-project" name={project.id} onClick={this.onProjectDelete}>Delete</button>
-            <Link className="projectDetail col-6" to={'/update/' + project.id + '/'}>Update</Link>
+            <Link className="projectDetail col-6" to={'/update/' + project.id + '/tasks/'}>Update</Link>
           </div>
         </Card>
       </div>
