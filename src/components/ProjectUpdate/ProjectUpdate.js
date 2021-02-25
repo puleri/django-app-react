@@ -4,6 +4,7 @@ import { projectUpdate, showProject } from '../../api/project'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { css } from 'glamor'
+// import ProjectTasks from '../ProjectTasks/ProjectTasks'
 // import Container from 'react-bootstrap/Container'
 
 const UpdateProject = props => {
@@ -111,7 +112,7 @@ const UpdateProject = props => {
       }
     }
   }
-  console.log('project is ', project)
+  // console.log('project is ', project)
   return (
     <div>
       {project ? (
@@ -163,4 +164,5 @@ const UpdateProject = props => {
     </div>
   )
 }
+// <ProjectTasks />
 export default UpdateProject

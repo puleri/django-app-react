@@ -8,6 +8,7 @@ body {
   body {
     background-image: url('img/clouds-square.png');
     background-size: cover;
+    font-family: 'Gruppo', cursive;
   }
 }
 
@@ -111,4 +112,14 @@ body {
 .updateForm {
   margin-bottom: 30px;
   margin-top: 20px;
+}
+
+.logo {
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.header {
+  font-size: 20px;
+  font-family: 'Gruppo', cursive;
 }

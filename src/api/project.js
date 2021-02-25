@@ -11,6 +11,28 @@ export const projectIndex = user => {
   })
 }
 
+export const taskIndex = (user, projectId) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/projects/' + projectId + '/tasks/',
+    headers: {
+      Authorization: `Token ${user.token}`
+    }
+  })
+}
+
+export const createTask = (task, user, projectId) => {
+  console.log('task is ', task)
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/projects/' + projectId + '/tasks/',
+    headers: {
+      Authorization: `Token ${user.token}`
+    },
+    data: { task }
+  })
+}
+
 export const showProject = (user, projectId) => {
   return axios({
     method: 'GET',

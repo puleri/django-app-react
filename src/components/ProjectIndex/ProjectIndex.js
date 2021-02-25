@@ -14,6 +14,7 @@ import { projectIndex, createProject, projectDelete } from '../../api/project'
 class Projects extends Component {
   constructor (props) {
     super(props)
+    // console.log('props are ', props)
     const today = new Date()
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
     this.state = {

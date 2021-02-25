@@ -10,7 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Home from './components/Home/Home'
-
+// import ProjectTasks from './components/ProjectTasks/ProjectTasks'
 import ProjectIndex from './components/ProjectIndex/ProjectIndex'
 import UpdateProject from './components/ProjectUpdate/ProjectUpdate'
 class App extends Component {
@@ -71,12 +71,16 @@ class App extends Component {
             </div>
           )} />
           <AuthenticatedRoute user={user} path='/update/:projectId' render={({ match, history }) => (
-            <UpdateProject
-              match={match}
-              history={history}
-              user={user}
-              msgAlert={this.msgAlert}
-            />
+            <div>
+
+              <UpdateProject
+                match={match}
+                history={history}
+                user={user}
+                msgAlert={this.msgAlert}
+              />
+
+            </div>
           )}/>
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
@@ -89,5 +93,12 @@ class App extends Component {
     )
   }
 }
+
+// <ProjectTasks
+//   match={match}
+//   history={history}
+//   user={user}
+//   msgAlert={this.msgAlert}
+// />
 
 export default App
