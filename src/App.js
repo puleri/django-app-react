@@ -10,6 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Home from './components/Home/Home'
+import Footer from './components/Footer/Footer'
 // import ProjectTasks from './components/ProjectTasks/ProjectTasks'
 import ProjectIndex from './components/ProjectIndex/ProjectIndex'
 import UpdateProject from './components/ProjectUpdate/ProjectUpdate'
@@ -89,6 +90,7 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
+        <Footer user={user}/>
       </Fragment>
     )
   }
