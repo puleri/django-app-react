@@ -74,7 +74,7 @@ const UpdateProject = props => {
         variant: 'success'
       }))
       .catch(err => msgAlert({
-        eading: 'Update failed',
+        heading: 'Update failed',
         message: 'Unable to edit at this time. ' + err.message,
         variant: 'danger'
       }))
@@ -164,5 +164,5 @@ const UpdateProject = props => {
     </div>
   )
 }
-// <ProjectTasks />
+
 export default UpdateProject

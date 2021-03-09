@@ -135,7 +135,7 @@ body {
   height: 30px;
   width: 30px;
   margin-left: 50px;
-  margin-bottom: -30px;
+  margin-bottom: -10px;
 }
 
 .updateForm {
@@ -152,16 +152,25 @@ body {
 }
 
 .rise-up {
-  top: 20px;
-  margin-top: 2px;
-  margin-bottom: -2px;
-  position: relative;
-  transition: margin-top ease .5s;
+  display: inline-block;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  // top: 20px;
+  // margin-top: 4px;
+  // transition: margin-top ease .5s;
+  // -webkit-transition: margin 0.5s ease-out;
+  // -moz-transition: margin 0.5s ease-out;
+  // -o-transition: margin 0.5s ease-out;
 }
 
 .rise-up:hover {
-  margin-top: -2px;
-  margin-bottom: 2px;
+  transform: translateY(-8px);
+  text-decoration: none;
+}
+
+.home-no-account {
+  font-size: 23px;
 }
 
 .footer {

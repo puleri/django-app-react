@@ -24,9 +24,11 @@ class Home extends Component {
             <h4 className="carousel-header">Built by a Musician and Full-Stack Software Engineer, Zone makes the Agile developer workflow to all with the goal of creating more efficent production management.</h4>
           </Carousel.Item>
         </Carousel>
-        <div className='rise-up'>
+        <div className='home-no-account'>
           <br />
-          <p style={{ 'textAlign': 'center', 'margin-top': '50px', 'margin-bottom': '200px', 'fontFamily': 'Gruppo' }}><b>Are you an artist? <a style={{ 'color': 'black' }} href='#sign-up'> Create a free account</a></b></p>
+          <p style={{ 'textAlign': 'center', 'marginTop': '50px', 'marginBottom': '200px', 'fontFamily': 'Gruppo' }}><b>Are you an artist? <a className='rise-up' style={{ 'color': 'black' }} href='#sign-up'> Create a free account</a></b></p>
+        </div>
+        <div>
         </div>
       </div>
     )

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { createTask, taskIndex } from '../../api/project'
 import Form from 'react-bootstrap/Form'
 import CardColumns from 'react-bootstrap/CardColumns'
@@ -8,7 +8,7 @@ import { withRouter, Link } from 'react-router-dom'
 import { css } from 'glamor'
 
 const ProjectTasks = props => {
-  console.log('props are ', props)
+  // console.log('props are ', props)
   const today = new Date()
   const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
   const [task, setTask] = useState({
@@ -21,17 +21,18 @@ const ProjectTasks = props => {
   })
   const [tasks, setTasks] = useState([])
   const { user, match, msgAlert } = props
+  console.log('msgAlert is ', msgAlert)
   // console.log('user is ', user)
-  useEffect(() => {
-    // createTask(task, user)
-    //   // .then(console.log('user is', user))
-    //   .then(response => {
-    //     setTask(response.data)
-    //   })
-    // .then(props => {
-    //
-    // })
-  }, [])
+  // useEffect(() => {
+  //   // createTask(task, user)
+  //   //   // .then(console.log('user is', user))
+  //   //   .then(response => {
+  //   //     setTask(response.data)
+  //   //   })
+  //   // .then(props => {
+  //   //
+  //   // })
+  // }, [])
 
   const handleChange = (event) => {
     setTask({
@@ -48,7 +49,7 @@ const ProjectTasks = props => {
         })
       })
       .then(props => {
-        console.log('user is', props.user)
+        // console.log('user is', props.user)
         taskIndex(props.user)
           .then(res => {
             setTasks({ tasks: res.data })
@@ -69,7 +70,7 @@ const ProjectTasks = props => {
         variant: 'success'
       }))
       .catch(err => msgAlert({
-        eading: 'Creation failed',
+        heading: 'Creation failed',
         message: 'Unable to create at this time. ' + err.message,
         variant: 'danger'
       }))

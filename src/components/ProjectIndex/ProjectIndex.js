@@ -35,6 +35,8 @@ class Projects extends Component {
 
   componentDidMount () {
     const { user, msgAlert } = this.props
+    console.log('msgAlert is ', msgAlert)
+
     projectIndex(user)
       .then(res => {
         // console.log('res is ', res)

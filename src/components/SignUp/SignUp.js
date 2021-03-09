@@ -66,7 +66,7 @@ class SignUp extends Component {
     const { email, password, passwordConfirmation } = this.state
 
     return (
-      <div className="row">
+      <div style={{ 'fontFamily': 'Gruppo' }} className="full-screen row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign up</h3>
           <Form className="updateForm" onSubmit={this.onSignUp}>

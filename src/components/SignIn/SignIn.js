@@ -64,7 +64,7 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="full-screen col-sm-10 col-md-8 mx-auto mt-5">
+      <div style={{ 'fontFamily': 'Gruppo' }} className="full-screen col-sm-10 col-md-8 mx-auto mt-5">
         <h3>Sign in</h3>
         <Form className="updateForm" onSubmit={this.onSignIn}>
           <Form.Group controlId="email">
