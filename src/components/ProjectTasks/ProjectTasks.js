@@ -20,9 +20,9 @@ const ProjectTasks = props => {
     description: ''
   })
   const [tasks, setTasks] = useState([])
-  const { user, match, msgAlert } = props
-  console.log('msgAlert is ', msgAlert)
-  // console.log('user is ', user)
+  const { match, msgAlert } = props
+  // console.log('msgAlert is ', msgAlert)
+  console.log('user is ', props.user)
   // useEffect(() => {
   //   // createTask(task, user)
   //   //   // .then(console.log('user is', user))
@@ -42,14 +42,14 @@ const ProjectTasks = props => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    createTask(user, task, match.params.projectId)
+    createTask(props.user, props.task, match.params.projectId)
       .then(response => {
         setTask({
           createdId: response.data._id
         })
       })
       .then(props => {
-        // console.log('user is', props.user)
+        console.log('user is', props.user)
         taskIndex(props.user)
           .then(res => {
             setTasks({ tasks: res.data })
@@ -119,7 +119,7 @@ const ProjectTasks = props => {
   }
 
   return (
-    <div>
+    <div style={{ 'fontFamily': 'Gruppo' }}>
       <h1>Hi</h1>
       <Form onSubmit={handleSubmit} className="createProject">
         <div className="row">

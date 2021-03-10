@@ -21,7 +21,7 @@ export const taskIndex = (user, projectId) => {
   })
 }
 
-export const createTask = (task, user, projectId) => {
+export const createTask = (user, task, projectId) => {
   console.log('task is ', task)
   return axios({
     method: 'POST',

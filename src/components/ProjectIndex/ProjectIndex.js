@@ -192,7 +192,7 @@ class Projects extends Component {
       </div>
     ))
     return (
-      <div>
+      <div style={{ 'fontFamily': 'Gruppo' }}>
         <Form onSubmit={this.onCreateProject} className="createProject">
           <div className="row">
             <div className="col-12">

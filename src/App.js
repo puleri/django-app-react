@@ -11,7 +11,7 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Home from './components/Home/Home'
 import Footer from './components/Footer/Footer'
-// import ProjectTasks from './components/ProjectTasks/ProjectTasks'
+import ProjectTasks from './components/ProjectTasks/ProjectTasks'
 import ProjectIndex from './components/ProjectIndex/ProjectIndex'
 import UpdateProject from './components/ProjectUpdate/ProjectUpdate'
 class App extends Component {
@@ -75,6 +75,12 @@ class App extends Component {
             <div>
 
               <UpdateProject
+                match={match}
+                history={history}
+                user={user}
+                msgAlert={this.msgAlert}
+              />
+              <ProjectTasks
                 match={match}
                 history={history}
                 user={user}

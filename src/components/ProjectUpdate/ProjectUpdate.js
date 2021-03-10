@@ -16,7 +16,8 @@ const UpdateProject = props => {
     deadline: date,
     priority: 'Must',
     time_estimate: 1,
-    description: ''
+    description: '',
+    tasks: []
   })
   const [updated, setUpdated] = useState(false)
   const { user, msgAlert, match } = props
@@ -114,7 +115,7 @@ const UpdateProject = props => {
   }
   // console.log('project is ', project)
   return (
-    <div>
+    <div style={{ 'fontFamily': 'Gruppo' }}>
       {project ? (
         <Form className="updateForm" onSubmit={handleSubmit}>
           <div className="row">

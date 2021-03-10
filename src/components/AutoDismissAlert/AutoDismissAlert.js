@@ -41,7 +41,7 @@ class AutoDismissAlert extends React.Component {
         variant={variant}
         onClose={this.handleClose}
       >
-        <div className="container">
+        <div style={{ 'fontFamily': 'Gruppo' }} className="container">
           <Alert.Heading>
             {heading}
           </Alert.Heading>
