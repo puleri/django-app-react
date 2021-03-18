@@ -1,5 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
+html {
+  zoom: 100%;
+}
+
 body {
   background: url('img/clouds.png');
   background-size: cover;
